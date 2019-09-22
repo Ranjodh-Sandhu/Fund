@@ -3896,7 +3896,7 @@
 			}
 
 	}
-	form {
+	.is-preload form {
         width: 60%;
         margin: 60px auto;
         background: #efefef;
