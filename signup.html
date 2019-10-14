@@ -43,22 +43,22 @@
                 <input type="hidden" name="action" value="register" />
                 <div class="row gtr-50 gtr-uniform">
                     <div class="col-6 col-12-mobilep">
-                        <input type="text" name="firstname" pattern="[a-zA-Z]+" id="firstname" value="" placeholder=" First Name" />
+                        <input type="text" name="firstname" pattern="[a-zA-Z]+" id="firstname" value="" placeholder=" First Name" required/>
                     </div>
                     <div class="col-6 col-12-mobilep">
-                        <input type="text" name="lastname" pattern="[a-zA-Z]+" id="lastname" value="" placeholder=" Last Name" />
+                        <input type="text" name="lastname" pattern="[a-zA-Z]+" id="lastname" value="" placeholder=" Last Name" required/>
                     </div>
                     <div class="col-12">
-                        <input type="text" name="email" pattern="[a-zA-Z0-9_.+]+@[a-zA-Z0-9-]+.[a-zA-Z]+" id="email" value="" placeholder="Email" />
+                        <input type="text" name="email" pattern="[a-zA-Z0-9_.+]+@[a-zA-Z0-9-]+.[a-zA-Z]+" id="email" value="" placeholder="Email" required/>
                     </div>
                     <div class="col-12">
-                        <input type="text" name="password" id="password" value="" placeholder="Password" />
+                        <input type="password" name="password" id="password" value="" placeholder="Password" required/>
                     </div>
                     <div class="col-12">
-                        <input type="text" name="address" pattern="[0-9]+[ ][a-z. ]+" id="address" value="" placeholder="Address" />
+                        <input type="text" name="address" pattern="[0-9]+[ a-z.* ]+" id="address" value="" placeholder="Address" required />
                     </div>
                     <div class="col-6 col-12-mobilep">
-                        <input type="text" name="city" pattern="[a-zA-Z]+" id="city" value="" placeholder="City" />
+                        <input type="text" name="city" pattern="[a-zA-Z]+" id="city" value="" placeholder="City" required/>
                     </div>
                     <div class="col-6 col-12-mobilep">
                         <select>
@@ -116,7 +116,7 @@
                         </select>
                     </div>
                     <div class="col-12">
-                        <input type="zipcode" name="zipcode" pattern="[0-9]{5}" id="zipcode" value="" placeholder="Zip Code" />
+                        <input type="zipcode" name="zipcode" pattern="[0-9]{5}" id="zipcode" value="" placeholder="Zip Code" required/>
                     </div>
                     <div class="col-12">
                         <ul class="actions special">

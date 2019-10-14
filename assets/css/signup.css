@@ -145,7 +145,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: teal;
+		color: #09d6bd;
         font-weight: 1000;
 		line-height: 1em;
 		margin: 0 0 0.5em 0;
@@ -2746,7 +2746,7 @@
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: #666;
+		background-color: #09d6bd;
 		border-radius: 6px;
 		border: 0;
 		color: #ffffff;
@@ -2863,7 +2863,7 @@
 			input[type="reset"].primary:active,
 			input[type="button"].primary:active,
 			.button.primary:active {
-				background-color: #e4886a;
+				background-color: #09d6bd;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
