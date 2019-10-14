@@ -11,7 +11,7 @@ $hash = password_hash($password, PASSWORD_BCRYPT);
 try {
 
     $myPDO = new PDO("pgsql:host=$dbhost;dbname=$dbname", "$dbUser", "$dbpass");
-    echo 'Connected';
+    //echo 'Connected';
  // Check connection
 }catch(PDOException $e){
     echo $e->getMessage();
@@ -46,12 +46,25 @@ try {
 	$errorAddress = "Address is invalid";
  } else {
 	echo "address ok";
+ } */
+ 
+ $sql1 = "INSERT INTO user_login(user_first_name, user_last_name, user_email, user_address, user_city, user_zip, user_state, user_password) VALUES ('$_POST[firstname]','$_POST[lastname]','$_POST[email]','$_POST[address]','$_POST[city]','$_POST[zipcode]','$_POST[State]', '$hash')";
+ $testdupes = $myPDO->prepare("SELECT COUNT(*) from user_login where user_email = '$_POST[email]'");
+ $testdupes->execute();
+ $result = $testdupes->fetch(PDO::FETCH_ASSOC);
+ //print_r($result);
+ $answer = implode("|", $result);
+ if($answer == 0) {
+     echo "Thank you for signing up";
  }
- $sql1 = "INSERT INTO user_login(user_first_name, user_last_name, user_email, user_address, user_city, user_zip, user_state, user_password) VALUES ('$_POST[firstname]','$_POST[lastname]','$_POST[email]','$_POST[address]','$_POST[city]','$_POST[zipcode]','$_POST[State]', '$hash')";
- $sql2 = "SELECT COUNT(*) from user_login where user_email = '$_POST[email]'";
- $myPDO->query($sql2); */
- $sql1 = "INSERT INTO user_login(user_first_name, user_last_name, user_email, user_address, user_city, user_zip, user_state, user_password) VALUES ('$_POST[firstname]','$_POST[lastname]','$_POST[email]','$_POST[address]','$_POST[city]','$_POST[zipcode]','$_POST[State]', '$hash')";
+ else {
+     echo "That email address is already taken!";
+ }
+ //strcmp($result['user_first_name'], [string]);
+//$result->stmt->fetchColumn();
+ //$sql2 = "SELECT COUNT(*) from user_login where user_email = '$_POST[email]'";
+ //$myPDO->query($sql2); 
  $myPDO->query($sql1);
- echo "1 record added"; // Output to user_login(user_first_name, user_last_name, user_email, user_address, user_city, user_zip) VALUES ('J', 'L', 'lop@virg.edu', '5201 street', 'Dirtville', '25022' )
+ //echo "1 record added"; // Output to user_login(user_first_name, user_last_name, user_email, user_address, user_city, user_zip) VALUES ('J', 'L', 'lop@virg.edu', '5201 street', 'Dirtville', '25022' )
 $myPDO=null;
 ?>
