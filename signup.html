@@ -43,22 +43,22 @@
                 <input type="hidden" name="action" value="register" />
                 <div class="row gtr-50 gtr-uniform">
                     <div class="col-6 col-12-mobilep">
-                        <input type="text" name="firstname" pattern="[a-zA-Z]+" id="firstname" value="" placeholder=" First Name" required/>
+                        <input type="text" name="firstname" pattern="[a-zA-Z]+" title="First name should only contain letters e.g. John" id="firstname" value="" placeholder=" First Name" required/>
                     </div>
                     <div class="col-6 col-12-mobilep">
-                        <input type="text" name="lastname" pattern="[a-zA-Z]+" id="lastname" value="" placeholder=" Last Name" required/>
+                        <input type="text" name="lastname" pattern="[a-zA-Z]+" title="Last name should only contain letters e.g. Smith" id="lastname" value="" placeholder=" Last Name" required/>
                     </div>
                     <div class="col-12">
-                        <input type="text" name="email" pattern="[a-zA-Z0-9_.+]+@[a-zA-Z0-9-]+[.][a-zA-Z]+" id="email" value="" placeholder="Email" required/>
+                        <input type="text" name="email" pattern="[a-zA-Z0-9_.+]+@[a-zA-Z0-9-]+[.][a-zA-Z]+" title="Email should contain alphanumeric characters, underscores, or periods followed by an @ and a domain name e.g. johnsmith@gmail.com" id="email" value="" placeholder="Email" required/>
                     </div>
                     <div class="col-12">
-                        <input type="password" name="password" id="password" value="" placeholder="Password" required/>
+                        <input type="password" name="password" id="password" value="" title="Password can be any combination of characters" placeholder="Password" required/>
                     </div>
                     <div class="col-12">
-                        <input type="text" name="address" pattern="[0-9]+[ A-Za-z.* ]+" id="address" value="" placeholder="Address" required />
+                        <input type="text" name="address" pattern="[0-9]+[ A-Za-z.* ]+" title="Address should be numbers followed by the street name e.g. 1819 Jefferson Park Ave." id="address" value="" placeholder="Address" required />
                     </div>
                     <div class="col-6 col-12-mobilep">
-                        <input type="text" name="city" pattern="[a-zA-Z]+" id="city" value="" placeholder="City" required/>
+                        <input type="text" name="city" pattern="[a-zA-Z]+" title="City should only contain letters" id="city" value="" placeholder="City" required/>
                     </div>
                     <div class="col-6 col-12-mobilep">
                         <select name = "State">
@@ -116,7 +116,7 @@
                         </select>
                     </div>
                     <div class="col-12">
-                        <input type="zipcode" name="zipcode" pattern="[0-9]{5}" id="zipcode" value="" placeholder="Zip Code" required/>
+                        <input type="zipcode" name="zipcode" pattern="[0-9]{5}" title="Zipcode should contain 5 numbers" id="zipcode" value="" placeholder="Zip Code" required/>
                     </div>
                     <div class="col-12">
                         <ul class="actions special">
