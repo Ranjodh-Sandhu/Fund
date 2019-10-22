@@ -1,27 +1,27 @@
-<?php 
-require 'vendor/autoload.php';
-
-$mail = new PHPMailer(true);
-
-try {
-    //Server settings
-    $mail->SMTPDebug = 0;                      // Enable verbose debug output
-    $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'funddteam@gmail.com';                     // SMTP username
-    $mail->Password   = 'RJLH4753';                               // SMTP password
-    $mail->Port       = 587;                                    // TCP port to connect to
-
-    // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    //$mail->setFrom($_POST['email'], $_POST['name']);
-    $mail->Subject = $_POST['subject'];
-    $mail->Body    = $_POST['message'];
-
-    $mail->send();
-    echo 'Thank you!';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
+<?php
+    require_once('class.phpmailer.php');
+    function sendmail($to,$subject,$message,$name)
+    {
+                  $mail             = new PHPMailer();
+                  $body             = $message;
+                  $mail->IsSMTP();
+                  $mail->SMTPAuth   = true;
+                  $mail->Host       = "smtp.gmail.com";
+                  $mail->Port       = 587;
+                  $mail->Username   = "funddteam@gmail.com";
+                  $mail->Password   = "RJLH4753";
+                  $mail->SMTPSecure = 'tls';
+                  $mail->SetFrom("funddteam@gmail.com", $_POST['name']);
+                  $mail->AddReplyTo($_POST['email'], $_POST['name']);
+                  $mail->Subject    = $_POST['subject'];
+                  $mail->AltBody    = $_POST['message'];
+                  $mail->MsgHTML($body);
+                  $address = $to;
+                  $mail->AddAddress($address, $name);
+                  if(!$mail->Send()) {
+                        echo 'Thank you!';
+                  } else {
+                    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                 }
+    }
 ?>
