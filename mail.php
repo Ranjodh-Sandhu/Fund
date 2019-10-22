@@ -1,5 +1,9 @@
 <?php
     require_once('class.phpmailer.php');
+    $to = "funddteam@gmail.com";
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $name = $_POST['name'];
     function sendmail($to,$subject,$message,$name)
     {
                   $mail             = new PHPMailer();
@@ -11,10 +15,10 @@
                   $mail->Username   = "funddteam@gmail.com";
                   $mail->Password   = "RJLH4753";
                   $mail->SMTPSecure = 'tls';
-                  $mail->SetFrom("funddteam@gmail.com", $_POST['name']);
-                  $mail->AddReplyTo($_POST['email'], $_POST['name']);
+                  $mail->SetFrom("funddteam@gmail.com", $name);
+                  $mail->AddReplyTo($_POST['email'], $name);
                   $mail->Subject    = $_POST['subject'];
-                  $mail->AltBody    = $_POST['message'];
+                  $mail->AltBody    = "Any message.";
                   $mail->MsgHTML($body);
                   $address = $to;
                   $mail->AddAddress($address, $name);
