@@ -16,6 +16,7 @@
                     $mail->Password   = "RJLH4753";
                     $mail->SMTPSecure = 'tls';
                     $mail->SetFrom('funddteam@gmail.com', 'Fundd team');
+                    $mail->SetTo("{$to}", "{$firstname}");
                     $mail->AddReplyTo("{$to}", "{$firstname}");
                     $mail->Subject    = "{$subject}";
                     $mail->AltBody    = "Any message.";
