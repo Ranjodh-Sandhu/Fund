@@ -1,10 +1,39 @@
 <?php
-      include("sendmail.php");
+    require_once('PHPMailer-master/src/PHPMailer.php');
+    require_once('PHPMailer-master/src/SMTP.php');
+    require_once('PHPMailer-master/src/Exception.php');
+    use PHPMailer\PHPMailer\PHPMailer;
+    function sendmail1($to,$subject,$message,$firstname)
+    {
+                  $mail             = new PHPMailer(true);
+                  try{
+                    $body             = "{$firstname} <br> {$to} <br> {$message}";
+                    $mail->IsSMTP();
+                    $mail->SMTPAuth   = true;
+                    $mail->Host       = "smtp.gmail.com";
+                    $mail->Port       = 587;
+                    $mail->Username   = "funddteam@gmail.com";
+                    $mail->Password   = "RJLH4753";
+                    $mail->SMTPSecure = 'tls';
+                    $mail->SetFrom('funddteam@gmail.com', 'Fundd team');
+                    $mail->AddReplyTo("{$to}", "{$firstname}");
+                    $mail->Subject    = "{$subject}";
+                    $mail->AltBody    = "Any message.";
+                    $mail->MsgHTML($body);
+                    $address = "funddteam@gmail.com";
+                    $mail->AddAddress($address, $name);
+                    $mail->send();
+                    echo '<h2>Thank You!</h2>';
+                  }catch(Exception $e) {
+                      echo "Mail cannot be sent: {$mail->ErrorInfo}";
+                  }
+                  
+    }
       $to       =   $_POST['email'];
       $subject  =   'Welcome to fundd';
       $message  =   'This is a message to confirm that you have joined fundd.';
-      $name     =   $_POST['firstname'];
-      $mailsend =   sendmail($to,$subject,$message,$name);
+      $firstname     =   $_POST['firstname'];
+      $mailsend =   sendmail1($to,$subject,$message,$firstname);
 
 
 $dbhost = "ec2-174-129-210-249.compute-1.amazonaws.com";
