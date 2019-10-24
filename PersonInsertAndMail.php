@@ -7,7 +7,7 @@
     {
                   $mail             = new PHPMailer(true);
                   try{
-                    $body             = "{$firstname} <br> {$to} <br> {$message}";
+                    $body             = "{$firstname} <br> {$message}";
                     $mail->IsSMTP();
                     $mail->SMTPAuth   = true;
                     $mail->Host       = "smtp.gmail.com";
