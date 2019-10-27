@@ -1,39 +1,5 @@
 <?php
-    require_once('PHPMailer-master/src/PHPMailer.php');
-    require_once('PHPMailer-master/src/SMTP.php');
-    require_once('PHPMailer-master/src/Exception.php');
-    use PHPMailer\PHPMailer\PHPMailer;
-    function sendmail1($to,$subject,$message,$firstname)
-    {
-                  $mail             = new PHPMailer(true);
-                  try{
-                    $body             = "{$firstname} <br> {$message}";
-                    $mail->IsSMTP();
-                    $mail->SMTPAuth   = true;
-                    $mail->Host       = "smtp.gmail.com";
-                    $mail->Port       = 587;
-                    $mail->Username   = "funddteam@gmail.com";
-                    $mail->Password   = "RJLH4753";
-                    $mail->SMTPSecure = 'tls';
-                    $mail->SetFrom('funddteam@gmail.com', 'Fundd team');
-                    $mail->AddReplyTo("{$to}", "{$firstname}");
-                    $mail->Subject    = "{$subject}";
-                    $mail->AltBody    = "Any message.";
-                    $mail->MsgHTML($body);
-                    $address = "{$to}";
-                    $mail->AddAddress($address, $name);
-                    $mail->send();
-                    echo '<h2>Thank You!</h2>';
-                  }catch(Exception $e) {
-                      echo "Mail cannot be sent: {$mail->ErrorInfo}";
-                  }
-                  
-    }
-      $to       =   $_POST['email'];
-      $subject  =   'Welcome to fundd';
-      $message  =   'This is a message to confirm that you have joined fundd.';
-      $firstname     =   $_POST['firstname'];
-      $mailsend =   sendmail1($to,$subject,$message,$firstname);
+   
 
 
 $dbhost = "ec2-174-129-210-249.compute-1.amazonaws.com";
@@ -83,7 +49,6 @@ try {
 	echo "address ok";
  } */
  
- $sql1 = "INSERT INTO user_login(user_first_name, user_last_name, user_email, user_address, user_city, user_zip, user_state, user_password) VALUES ('$_POST[firstname]','$_POST[lastname]','$_POST[email]','$_POST[address]','$_POST[city]','$_POST[zipcode]','$_POST[State]', '$hash')";
  $testdupes = $myPDO->prepare("SELECT COUNT(*) from user_login where user_email = '$_POST[email]'");
  $testdupes->execute();
  $result = $testdupes->fetch(PDO::FETCH_ASSOC);
@@ -99,9 +64,7 @@ try {
 //$result->stmt->fetchColumn();
  //$sql2 = "SELECT COUNT(*) from user_login where user_email = '$_POST[email]'";
  //$myPDO->query($sql2); 
- $myPDO->query($sql1);
  //echo "1 record added"; // Output to user_login(user_first_name, user_last_name, user_email, user_address, user_city, user_zip) VALUES ('J', 'L', 'lop@virg.edu', '5201 street', 'Dirtville', '25022' )
-$myPDO=null;
 
 
 

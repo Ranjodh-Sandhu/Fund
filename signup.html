@@ -48,8 +48,23 @@
                     <div class="col-6 col-12-mobilep">
                         <input type="text" name="lastname" pattern="[a-zA-Z]+" title="Last name should only contain letters e.g. Smith" id="lastname" value="" placeholder=" Last Name" required/>
                     </div>
+                    <script type="text/javascript">
+                        function checkMailStatus(){
+                            //alert("came");
+                        var email=$("#email").val();// value in field email
+                        $.ajax({
+                            type:'post',
+                                url:'emailverify.php',// put your real file name 
+                                data:{email: email},
+                                success:function(msg){
+                                alert(msg); // your message will come here.     
+                                }
+                         });
+                        }
+                        
+                        </script>
                     <div class="col-12">
-                        <input type="text" name="email" pattern="[a-zA-Z0-9_.+]+@[a-zA-Z0-9-]+[.][a-zA-Z]+" title="Email should contain alphanumeric characters, underscores, or periods followed by an @ and a domain name e.g. johnsmith@gmail.com" id="email" value="" placeholder="Email" required/>
+                        <input type="text" name="email" pattern="[a-zA-Z0-9_.+]+@[a-zA-Z0-9-]+[.][a-zA-Z]+" title="Email should contain alphanumeric characters, underscores, or periods followed by an @ and a domain name e.g. johnsmith@gmail.com" id="email" value="" placeholder="Email" onblur="checkMailStatus()" required/>
                     </div>
                     <div class="col-12">
                         <input type="password" name="password" id="password" value="" title="Password can be any combination of characters" placeholder="Password" required/>
