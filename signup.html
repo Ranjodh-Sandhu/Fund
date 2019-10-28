@@ -57,7 +57,10 @@
                                 url:'emailverify.php',// put your real file name 
                                 data:{email: email},
                                 success:function(msg){
-                                alert(msg); // your message will come here.     
+                                    if(msg == "0") {
+                                        alert("This email is already taken!")
+                                    }
+                                //alert(msg); // your message will come here.     
                                 }
                          });
                         }

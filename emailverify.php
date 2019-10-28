@@ -55,10 +55,10 @@ try {
  //print_r($result);
  $answer = implode("|", $result);
  if($answer == 0) {
-     echo "Your email is unique and valid.";
+     echo "1";
  }
  else {
-     echo "That email address is already taken!";
+     echo "0";
      exit();
  }
  //strcmp($result['user_first_name'], [string]);
