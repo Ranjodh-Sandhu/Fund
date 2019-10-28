@@ -70,7 +70,7 @@
                         <input type="text" name="email" pattern="[a-zA-Z0-9_.+]+@[a-zA-Z0-9-]+[.][a-zA-Z]+" title="Email should contain alphanumeric characters, underscores, or periods followed by an @ and a domain name e.g. johnsmith@gmail.com" id="email" value="" placeholder="Email" onblur="checkMailStatus()" required/>
                     </div>
                     <div class="col-12">
-                        <input type="password" name="password" id="password" value="" title="Password can be any combination of characters" placeholder="Password" required/>
+                        <input type="password" name="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" id="password" value="" title="Password can be any combination of characters" placeholder="Password" required/>
                     </div>
                     <div class="col-12">
                         <input type="text" name="address" pattern="[0-9]+[ A-Za-z.* ]+" title="Address should be numbers followed by the street name e.g. 1819 Jefferson Park Ave." id="address" value="" placeholder="Address" required />
