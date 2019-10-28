@@ -55,10 +55,11 @@ try {
  //print_r($result);
  $answer = implode("|", $result);
  if($answer == 0) {
-     echo "Thank you for signing up";
+     echo "Your email is unique and valid.";
  }
  else {
      echo "That email address is already taken!";
+     exit();
  }
  //strcmp($result['user_first_name'], [string]);
 //$result->stmt->fetchColumn();
