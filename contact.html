@@ -42,7 +42,7 @@
 			<form method="POST" action="mail.php">
 				<div class="row gtr-50 gtr-uniform">
 					<div class="col-6 col-12-mobilep">
-						<input type="text" name="name" pattern="/^[a-z ,.'-]+$/i" id="name" value="" placeholder="Name" />
+						<input type="text" name="name" pattern="^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$" id="name" value="" placeholder="Name" />
 					</div>
 					<div class="col-6 col-12-mobilep">
 						<input type="email" name="email" id="email" pattern="[a-zA-Z0-9_.+]+@[a-zA-Z0-9-]+[.][a-zA-Z]+" value="" placeholder="Email" />
