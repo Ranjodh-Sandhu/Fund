@@ -24,10 +24,16 @@ $password = $_POST['password'];
      //echo $answer;
      //echo $password;
      $answer = substr( $answer, 0, 60 );
+     $query2 = $myPDO->prepare("SELECT user_first_name from user_login where user_email = '$_POST[email]'");  
+     $query2->execute();  
+     $result2 = $query2->fetch(PDO::FETCH_ASSOC);
+     if($result2) {
+          $result2 = implode("|", $result2);
     if (password_verify($password, $answer)) 
      {
           echo 'Password is valid!';
           $_SESSION["username"] = $_POST["email"];  
+          $_SESSION["firstname"] = $result2;
           header("location:member_home.php"); 
      }
      else {
@@ -35,6 +41,7 @@ $password = $_POST['password'];
           header("location:loginl.html");
      } 
 }
+     }
            
      
 

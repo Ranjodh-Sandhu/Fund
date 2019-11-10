@@ -8,7 +8,7 @@
  }  
  else  
  {  
-      header("location:login.html");  
+      header("location:pdo_login.php");  
  }  
  ?> 
 
@@ -43,7 +43,7 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2>Welcome</h2>
+						<h2>Welcome <?php echo $_SESSION["firstname"]; ?></h2>
 						<p>Select your portal.</p>
 					</header>
 						<!-- <h3>John Freeman - $10</h3>
