@@ -11,7 +11,7 @@ $password = $_POST['password'];
      try {
 
           $myPDO = new PDO("pgsql:host=$dbhost;dbname=$dbname", "$dbUser", "$dbpass");
-          echo 'Connected';
+          //echo 'Connected';
        // Check connection
       }catch(PDOException $e){
           echo $e->getMessage();
@@ -31,7 +31,8 @@ $password = $_POST['password'];
           header("location:login_success.php"); 
      }
      else {
-          //echo 'invalid password';
+          $_SESSION['message'] = "Please enter a valid username or password";
+          header("location:loginl.html");
      } 
 }
            
