@@ -1,4 +1,9 @@
-<!DOCTYPE HTML>
+<?php
+if(!isset($_SESSION['username'])){
+	die(header("location: login.html"));
+}
+?>
+
 <html>
 <head>
 	<title>Welcome - fundd</title>
