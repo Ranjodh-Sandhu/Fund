@@ -28,7 +28,7 @@ $password = $_POST['password'];
      {
           echo 'Password is valid!';
           $_SESSION["username"] = $_POST["email"];  
-          header("location:login_success.php"); 
+          header("location:member_home.php"); 
      }
      else {
           $_SESSION['message'] = "Please enter a valid username or password";
