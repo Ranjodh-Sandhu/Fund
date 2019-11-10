@@ -56,7 +56,7 @@
         $apr = 5.4+ mt_rand(0, 100) * .001;
     else if ($credit_score > 400)
         $apr = 5.7+ mt_rand(0, 100) * .001;
-    else if ($credit_score > 350)
+    else if ($credit_score >= 350)
         $apr = 6.9+ mt_rand(0, 100) * .001;
     echo $apr;
 ?> percent.</h3>
