@@ -41,7 +41,6 @@ $dbUser = "xlfqpddygnpwxc";
 $dbpass = "b02909f3f17e94614fe4a4cf445cf2a85484ca8aafc9f5b1bbdb53b52509e420";
 $dbname = "ddhp0guq8tbh5u";
 $password = $_POST['password'];
-echo $password;
 $hash = password_hash($password, PASSWORD_BCRYPT);
 try {
 
