@@ -35,23 +35,31 @@
 						<p></p>
 					</header>
 					<div class="box">
-						<h3>Based off of the information you provided, we can offer you an interest rate of <?php
+						<h3>Based off of the information you provided, we can offer you an interest rate of 
+                            <?php
     $credit_score = $_POST['creditscore'];
-    if($credit_score > 760) 
-        $apr = 3.2 + mt_rand(0, 100) * .01;
+    if($credit_score > 800) 
+        $apr = 3.2 + mt_rand(0, 100) * .001;
+    else if($credit_score > 750)
+        $apr = 3.4+ mt_rand(0, 100) * .001;
     else if($credit_score > 700)
-        $apr = 3.4+ mt_rand(0, 100) * .01;
-    else if($credit_score > 680)
-        $apr = 3.6+ mt_rand(0, 100) * .01;
-    else if($credit_score > 660)
-        $apr = 3.8+ mt_rand(0, 100) * .01;
-    else if($credit_score > 640)
-        $apr = 4.2+ mt_rand(0, 100) * .01;
-    else if ($credit_score > 620)
-        $apr = 4.8+ mt_rand(0, 100) * .01;
-
+        $apr = 3.6+ mt_rand(0, 100) * .001;
+    else if($credit_score > 650)
+        $apr = 3.8+ mt_rand(0, 100) * .001;
+    else if($credit_score > 600)
+        $apr = 4.2+ mt_rand(0, 100) * .001;
+    else if ($credit_score > 550)
+        $apr = 4.7+ mt_rand(0, 100) * .001;
+    else if ($credit_score > 500)
+        $apr = 5.0+ mt_rand(0, 100) * .001;
+    else if ($credit_score > 450)
+        $apr = 5.4+ mt_rand(0, 100) * .001;
+    else if ($credit_score > 400)
+        $apr = 5.7+ mt_rand(0, 100) * .001;
+    else if ($credit_score > 350)
+        $apr = 6.9+ mt_rand(0, 100) * .001;
     echo $apr;
-?>percent.</h3>
+?> percent.</h3>
 					</div>
 				</section>
 
