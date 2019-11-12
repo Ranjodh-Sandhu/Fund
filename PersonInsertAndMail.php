@@ -41,6 +41,7 @@ $dbUser = "xlfqpddygnpwxc";
 $dbpass = "b02909f3f17e94614fe4a4cf445cf2a85484ca8aafc9f5b1bbdb53b52509e420";
 $dbname = "ddhp0guq8tbh5u";
 $password = $_POST['password'];
+//echo $password;
 $hash = password_hash($password, PASSWORD_BCRYPT);
 try {
 
@@ -89,7 +90,11 @@ try {
  //print_r($result);
  $answer = implode("|", $result);
  if($answer == 0) {
-     echo "Thank you for signing up";
+    session_start();
+    echo 'Password is valid!';
+    $_SESSION["username"] = $_POST["email"];  
+    $_SESSION["firstname"] = $_POST["firstname"];
+    header("location:member_home.php"); 
  }
  else {
      echo "That email address is already taken!";
