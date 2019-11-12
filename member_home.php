@@ -75,7 +75,7 @@
 								<h3>Investing</h3>
 								<p>View investing opportunities!</p>
 								<ul class="actions special">
-									<li><a href="invest.html" class="button alt">Invest</a></li>
+									<li><a href="invest.php" class="button alt">Invest</a></li>
 								</ul>
 							</section>
 
@@ -87,7 +87,7 @@
 								<h3>Borrowing</h3>
 								<p>Apply to be funded!</p>
 								<ul class="actions special">
-									<li><a href="borrow.html" class="button alt">Borrow</a></li>
+									<li><a href="borrow.php" class="button alt">Borrow</a></li>
 								</ul>
 							</section>
 
