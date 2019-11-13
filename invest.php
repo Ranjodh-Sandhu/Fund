@@ -25,7 +25,6 @@
             <img src="images/logow2.png" height="125%">
             <nav id="nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
                     <li>
                         <a href="#" class="icon solid fa-angle-down">More</a>
                         <ul>
