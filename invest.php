@@ -28,6 +28,7 @@
                     <li>
                         <a href="#" class="icon solid fa-angle-down">More</a>
                         <ul>
+							<li><a href="member_home.php">Home</a></li>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
@@ -77,7 +78,7 @@
                                     <input type="hidden" name="data" value="qbAfM+webtfbPR6Y7T0S7Vv/43J9mXh5y4Rr9QO677BRYXpJpCGKrt7MAX+d4Ke9SQ8VlLPYwpPawFAQ8kMfMNhSGcGdNHwmBltbXDKSVX+3tgumwnkKehVkNr0jX1nl5OYfh70e8Qn8fB/QJ371+JmIQaJlr6xUZrxghexuuutGEVKKam3i+YgM+34L8zu1VduhGZxqifAF54rKz1WIPQ==" />
                                     <input type="image" src="https://test.bitpay.com/cdn/en_US/bp-btn-pay-currencies.svg" name="submit" style="width: 168px" alt="BitPay, the easy way to pay with bitcoins.">
                                   </form>								<ul class="actions special">
-									<li><a href="buy.html" class="button alt">Learn More</a></li>
+									<li><a href="invest.php" class="button alt">Learn More</a></li>
 								</ul>
 							</section>
 
@@ -93,7 +94,7 @@
                                     <input type="hidden" name="data" value="qbAfM+webtfbPR6Y7T0S7Vv/43J9mXh5y4Rr9QO677BRYXpJpCGKrt7MAX+d4Ke90Wc/uyonmhvkuPQ83AA7U1W39T5hObTRWLEmvS7lG79qaiKSB++mO3bpZPiYMCc8SXpEn1mDg26Qs12l6BlTDYqV1Ya1fur368KwHVnJ8n6L+d40VJWU2EPPf3wqnwqusTeKPuMnObYYQlB0hcVFKw==" />
                                     <input type="image" src="https://test.bitpay.com/cdn/en_US/bp-btn-pay-currencies.svg" name="submit" style="width: 168px" alt="BitPay, the easy way to pay with bitcoins.">
                                   </form>								<ul class="actions special">
-									<li><a href="buy.html" class="button alt">Learn More</a></li>
+									<li><a href="invest.php" class="button alt">Learn More</a></li>
 								</ul>
 							</section>
 
